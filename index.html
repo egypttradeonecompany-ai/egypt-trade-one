@@ -795,3 +795,35 @@
 <meta property="og:description" content="احسب سعر النولون واطلب سحب فوري للحاوية من الميناء">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://egypttradeonecompany-ai.github.io/egypt-trade-one/">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('port-bg.avif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        animation: portAnimation 20s infinite alternate ease-in-out;
+    }
+
+    @keyframes portAnimation {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.1); }
+    }
+
+    .bg-slate-800, .bg-slate-900, div[class*="bg-"] {
+        backdrop-filter: blur(8px);
+    }
+</style>
