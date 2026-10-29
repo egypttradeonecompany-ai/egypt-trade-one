@@ -1,1 +1,788 @@
 index.html
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Egypt Trade One | للنقل والخدمات اللوجستية وتداول الحاويات</title>
+
+
+
+    <!-- Tailwind CSS -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+   
+
+    <!-- Font Awesome Icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   
+
+    <!-- Google Fonts (Cairo & Tajawal for modern Arabic typography) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        navy: {
+
+                            800: '#0B192C',
+
+                            900: '#070F1E',
+
+                            950: '#030712'
+
+                        },
+
+                        brandBlue: '#1E40AF',
+
+                        brandAccent: '#3B82F6',
+
+                        gold: {
+
+                            400: '#FACC15',
+
+                            500: '#EAB308',
+
+                            600: '#CA8A04'
+
+                        }
+
+                    },
+
+                    fontFamily: {
+
+                        cairo: ['Cairo', 'sans-serif']
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+
+    <style>
+
+        body {
+
+            font-family: 'Cairo', sans-serif;
+
+            background-color: #070F1E;
+
+            color: #f3f4f6;
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+
+
+        /* Subtle Ambient Glows */
+
+        .bg-glow-blue {
+
+            background: radial-gradient(circle at 50% 10%, rgba(30, 64, 175, 0.25) 0%, rgba(7, 15, 30, 0) 70%);
+
+        }
+
+
+
+        /* Glassmorphism Cards */
+
+        .glass-card {
+
+            background: rgba(15, 29, 52, 0.7);
+
+            backdrop-filter: blur(12px);
+
+            -webkit-backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+        }
+
+
+
+        .glass-card-accent {
+
+            background: rgba(30, 64, 175, 0.15);
+
+            backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(59, 130, 246, 0.25);
+
+        }
+
+
+
+        /* Custom Input styling for dark theme */
+
+        select, input {
+
+            background-color: rgba(11, 25, 44, 0.9) !important;
+
+            color: white !important;
+
+        }
+
+
+
+        /* Smooth Hide/Show animation */
+
+        .tab-content {
+
+            transition: all 0.3s ease-in-out;
+
+        }
+
+
+
+        /* Hide scrollbars for slick look */
+
+        .no-scrollbar::-webkit-scrollbar {
+
+            display: none;
+
+        }
+
+        .no-scrollbar {
+
+            -ms-overflow-style: none;
+
+            scrollbar-width: none;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="pb-24 pt-4 px-3 sm:px-6 max-w-md mx-auto relative bg-glow-blue min-h-screen">
+
+
+
+    <!-- TOP HEADER / BRAND BAR -->
+
+    <header class="glass-card rounded-2xl p-4 mb-4 flex items-center justify-between border-b border-brandAccent/30 sticky top-2 z-40 shadow-xl">
+
+        <div class="flex items-center space-x-3 space-x-reverse">
+
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brandBlue to-blue-500 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-blue-500/30">
+
+                <i class="fa-solid to-truck-front fa-truck-fast"></i>
+
+            </div>
+
+            <div>
+
+                <h1 class="text-xl font-black tracking-wide text-white leading-tight">
+
+                    Egypt Trade One
+
+                </h1>
+
+                <p class="text-xs text-gold-400 font-bold flex items-center gap-1">
+
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+
+                    للنقل والخدمات اللوجستية
+
+                </p>
+
+            </div>
+
+        </div>
+
+       
+
+        <a href="tel:01036606471" class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center active:scale-95 transition">
+
+            <i class="fa-solid fa-phone"></i>
+
+        </a>
+
+    </header>
+
+
+
+    <!-- HERO / PORT COVERAGE BADGE -->
+
+    <section class="glass-card rounded-3xl p-5 mb-4 relative overflow-hidden text-center border-brandAccent/20">
+
+        <!-- Port Tags -->
+
+        <div class="flex flex-wrap justify-center gap-2 mb-3">
+
+            <span class="bg-brandBlue/30 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30">
+
+                🚢 ميناء دمياط
+
+            </span>
+
+            <span class="bg-brandBlue/30 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30">
+
+                ⚓ بورسعيد
+
+            </span>
+
+            <span class="bg-brandBlue/30 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30">
+
+                📍 شرق التفريعة
+
+            </span>
+
+        </div>
+
+
+
+        <h2 class="text-2xl font-extrabold text-white leading-snug mb-3">
+
+            حلول لوجستية متكاملة وسحب فوري للحاويات
+
+        </h2>
+
+       
+
+        <p class="text-sm text-gray-300 leading-relaxed mb-4">
+
+            نضمن لك سرعة السحب من الميناء والأمان التام لحماية أعمالك وبضائعك من غرامات التأخير والأرضيات.
+
+        </p>
+
+
+
+        <!-- STATS GRID -->
+
+        <div class="grid grid-cols-3 gap-2 pt-2 border-t border-gray-700/50">
+
+            <div class="p-2 bg-navy-800/80 rounded-xl border border-gray-800">
+
+                <span class="block text-xl font-extrabold text-gold-400">20+ عاماً</span>
+
+                <span class="text-[10px] text-gray-400 font-semibold">خبرة بالموانئ</span>
+
+            </div>
+
+            <div class="p-2 bg-navy-800/80 rounded-xl border border-gray-800">
+
+                <span class="block text-xl font-extrabold text-emerald-400">24/7</span>
+
+                <span class="text-[10px] text-gray-400 font-semibold">جاهزية فورية</span>
+
+            </div>
+
+            <div class="p-2 bg-navy-800/80 rounded-xl border border-gray-800">
+
+                <span class="block text-xl font-extrabold text-blue-400">100%</span>
+
+                <span class="text-[10px] text-gray-400 font-semibold">تأمين وشحنات</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INTERACTIVE FREIGHT CALCULATOR / RATE INQUIRY SIMULATOR -->
+
+    <section class="glass-card-accent rounded-3xl p-5 mb-4 relative shadow-2xl">
+
+        <div class="flex items-center gap-2 mb-3">
+
+            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold">
+
+                <i class="fa-solid fa-calculator"></i>
+
+            </div>
+
+            <div>
+
+                <h3 class="text-base font-bold text-white">حاسبة النولون السريعة</h3>
+
+                <p class="text-xs text-blue-200">احسب تكلفة السحب واطلب عرض السعر فوراً</p>
+
+            </div>
+
+        </div>
+
+
+
+        <form id="calcForm" onsubmit="sendWhatsAppQuote(event)" class="space-y-3">
+
+            <!-- Cargo Type -->
+
+            <div>
+
+                <label class="block text-xs text-gray-300 font-semibold mb-1">نوع الشحنة / الحاوية:</label>
+
+                <select id="cargoType" class="w-full text-sm rounded-xl p-3 border border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+                    <option value="حاوية 20 قدم">حاوية 20 قدم (الجافة)</option>
+
+                    <option value="حاوية 40 قدم">حاوية 40 قدم (High Cube)</option>
+
+                    <option value="ثلاجة مبردة 40 قدم">ثلاجة مبردة 40 قدم (Reefer)</option>
+
+                    <option value="حاويتين 20 قدم (2x20)">حاويتان 20 قدم (2x20)</option>
+
+                    <option value="بضائع عامة / صب">بضائع عامة / أخشاب / صب</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Departure Port -->
+
+            <div>
+
+                <label class="block text-xs text-gray-300 font-semibold mb-1">ميناء التحميل:</label>
+
+                <select id="departurePort" class="w-full text-sm rounded-xl p-3 border border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+                    <option value="ميناء دمياط البحري">ميناء دمياط البحري</option>
+
+                    <option value="ميناء بورسعيد">ميناء بورسعيد</option>
+
+                    <option value="ميناء شرق التفريعة">ميناء شرق التفريعة</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Destination City -->
+
+            <div>
+
+                <label class="block text-xs text-gray-300 font-semibold mb-1">جهة التسليم (المحافظة / المدينة):</label>
+
+                <select id="destinationCity" class="w-full text-sm rounded-xl p-3 border border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+                    <option value="القاهرة الكبرى">القاهرة الكبرى</option>
+
+                    <option value="مدينة 6 أكتوبر">مدينة 6 أكتوبر</option>
+
+                    <option value="العاشر من رمضان">العاشر من رمضان</option>
+
+                    <option value="برج العرب - الإسكندرية">برج العرب - الإسكندرية</option>
+
+                    <option value="السادات - المنوفية">مدينة السادات</option>
+
+                    <option value="العلمين الجديدة">العلمين الجديدة</option>
+
+                    <option value="محافظات الصعيد">محافظات الصعيد</option>
+
+                    <option value="مدينة أخرى (سيتم تحديدها)">مدينة أخرى...</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Notes or Custom location -->
+
+            <div>
+
+                <label class="block text-xs text-gray-300 font-semibold mb-1">تفاصيل إضافية (اختياري):</label>
+
+                <input type="text" id="extraDetails" placeholder="مثال: موعد الإفراج المتوقع أو اسم المصنع" class="w-full text-sm rounded-xl p-3 border border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-400">
+
+            </div>
+
+
+
+            <button type="submit" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 active:scale-98 transition">
+
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+
+                طلب عرض سعر مباشر عبر الواتساب
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- SERVICES SECTION -->
+
+    <section class="mb-5">
+
+        <div class="flex items-center justify-between mb-3 px-1">
+
+            <h3 class="text-lg font-extrabold text-white flex items-center gap-2">
+
+                <i class="fa-solid fa-boxes-packing text-gold-400"></i>
+
+                خدماتنا الأساسية
+
+            </h3>
+
+            <span class="text-xs text-blue-400 font-semibold">حلول متكاملة</span>
+
+        </div>
+
+
+
+        <div class="space-y-3">
+
+            <!-- Service 1 -->
+
+            <div class="glass-card rounded-2xl p-4 flex gap-3 items-start border-l-4 border-l-brandBlue">
+
+                <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg shrink-0">
+
+                    <i class="fa-solid fa-box font-bold"></i>
+
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold text-white text-sm mb-1">نقل الحاويات (Containers)</h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        نقل كافة أنواع الحاويات 20 قدم و 40 قدم من الموانئ البحرية للمحافظات والمناطق الصناعية بأعلى كفاءة وسرعة لمنع تراكم أرضيات الميناء.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Service 2 -->
+
+            <div class="glass-card rounded-2xl p-4 flex gap-3 items-start border-l-4 border-l-cyan-400">
+
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg shrink-0">
+
+                    <i class="fa-solid fa-snowflake"></i>
+
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold text-white text-sm mb-1">الشاحنات المبردة (Reefer Trucks)</h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        أسطول متكامل من الثلاجات لنقل المواد الغذائية والمحاصيل الحساسة للحرارة مع مراقبة التبريد وأجهزة GPS لحظة بلحظة.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Service 3 -->
+
+            <div class="glass-card rounded-2xl p-4 flex gap-3 items-start border-l-4 border-l-gold-500">
+
+                <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-lg shrink-0">
+
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold text-white text-sm mb-1">البضائع العامة والصب (Bulk Cargo)</h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        توفير تريلات ومقطورات مخصصة لنقل الأخشاب والمواد الخام والبضائع الثقيلة ومستلزمات المصانع من وإلى ميناء دمياط وباقي الجمهورية.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Service 4 -->
+
+            <div class="glass-card rounded-2xl p-4 flex gap-3 items-start border-l-4 border-l-emerald-400">
+
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                </div>
+
+                <div>
+
+                    <h4 class="font-bold text-white text-sm mb-1">الدعم اللوجستي والسحب الفوري</h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        خدمات التنسيق الفوري مع المستخلص الجمركي لسحب الشحنة فور صدور الإفراج الجمركي لضمان أعلى معدل دوران وتوفير التكاليف.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WHY CHOOSE US SECTION -->
+
+    <section class="mb-5">
+
+        <h3 class="text-lg font-extrabold text-white mb-3 px-1 flex items-center gap-2">
+
+            <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+
+            لماذا تختار Egypt Trade One؟
+
+        </h3>
+
+
+
+        <div class="grid grid-cols-2 gap-2.5">
+
+            <!-- Feature 1 -->
+
+            <div class="glass-card p-3.5 rounded-2xl border border-gray-800">
+
+                <i class="fa-solid fa-bolt text-gold-400 text-xl mb-2 block"></i>
+
+                <h4 class="font-bold text-white text-xs mb-1">السرعة والجاهزية</h4>
+
+                <p class="text-[11px] text-gray-400 leading-tight">شاحناتنا متواجدة باستمرار عند بوابات ميناء دمياط فور الإفراج.</p>
+
+            </div>
+
+
+
+            <!-- Feature 2 -->
+
+            <div class="glass-card p-3.5 rounded-2xl border border-gray-800">
+
+                <i class="fa-solid fa-location-crosshairs text-blue-400 text-xl mb-2 block"></i>
+
+                <h4 class="font-bold text-white text-xs mb-1">التتبع اللحظي</h4>
+
+                <p class="text-[11px] text-gray-400 leading-tight">متابعة دقيقة لحركة الشاحنة وتحديثات مستمرة حتى وصولها لمخزنك.</p>
+
+            </div>
+
+
+
+            <!-- Feature 3 -->
+
+            <div class="glass-card p-3.5 rounded-2xl border border-gray-800">
+
+                <i class="fa-solid fa-lock text-emerald-400 text-xl mb-2 block"></i>
+
+                <h4 class="font-bold text-white text-xs mb-1">الأمان والتأمين</h4>
+
+                <p class="text-[11px] text-gray-400 leading-tight">سائقون محترفون وعناية فائقة بالبضائع من الاستلام حتى التسليم.</p>
+
+            </div>
+
+
+
+            <!-- Feature 4 -->
+
+            <div class="glass-card p-3.5 rounded-2xl border border-gray-800">
+
+                <i class="fa-solid fa-tags text-purple-400 text-xl mb-2 block"></i>
+
+                <h4 class="font-bold text-white text-xs mb-1">أسعار تنافسية</h4>
+
+                <p class="text-[11px] text-gray-400 leading-tight">أفضل أسعار نولون الحاويات والثلاجات لجميع المناطق الصناعية.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- COMPANY CONTACT DIRECTORY -->
+
+    <section class="glass-card rounded-2xl p-4 mb-4 space-y-3">
+
+        <h3 class="text-sm font-extrabold text-white pb-2 border-b border-gray-800 flex items-center gap-2">
+
+            <i class="fa-solid fa-building text-blue-400"></i>
+
+            بيانات الشركة والتواصل
+
+        </h3>
+
+
+
+        <div class="text-xs space-y-2.5">
+
+            <div class="flex justify-between items-center text-gray-300">
+
+                <span class="text-gray-400">اسم الشركة:</span>
+
+                <span class="font-bold text-white">Egypt Trade One</span>
+
+            </div>
+
+
+
+            <div class="flex justify-between items-center text-gray-300">
+
+                <span class="text-gray-400">المقر الرئيسي:</span>
+
+                <span class="font-bold text-white">دمياط - بالقرب من الميناء البحرى</span>
+
+            </div>
+
+
+
+            <div class="flex justify-between items-center text-gray-300">
+
+                <span class="text-gray-400">الهاتف / الواتساب:</span>
+
+                <a href="tel:01036606471" class="font-bold text-emerald-400 dir-ltr">01036606471</a>
+
+            </div>
+
+
+
+            <div class="flex justify-between items-center text-gray-300">
+
+                <span class="text-gray-400">التغطية:</span>
+
+                <span class="font-bold text-white">دمياط، بورسعيد، السويس، لكافة المحافظات</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER NOTE -->
+
+    <footer class="text-center text-[11px] text-gray-400 py-3">
+
+        <p>© 2026 Egypt Trade One - جميع الحقوق محفوظة</p>
+
+        <p class="text-gray-400 text-[10px] mt-1">ريح بالك، واعرف إن بضعتك معنا فاهمين شغلنا صح 🤝</p>
+
+    </footer>
+
+
+
+    <!-- STICKY BOTTOM QUICK ACTION BAR FOR MOBILE -->
+
+    <div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto p-3 bg-navy-900/95 backdrop-blur-md border-t border-gray-800/80 z-50 flex gap-2">
+
+        <!-- Call Button -->
+
+        <a href="tel:01036606471" class="flex-1 py-3 px-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition shadow-lg shadow-blue-600/30">
+
+            <i class="fa-solid fa-phone"></i>
+
+            اتصال هاتفي
+
+        </a>
+
+
+
+        <!-- WhatsApp Button -->
+
+        <a href="https://wa.me/201036606471?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20Egypt%20Trade%20One%D9%8F%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%86%D9%88%D9%84%D9%88%D9%86%20%D9%86%D9%82%D9%84%20%D8%B4%D8%AD%D9%86%D8%A9." target="_blank" class="flex-1 py-3 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition shadow-lg shadow-emerald-600/30">
+
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+
+            واتساب مباشر
+
+        </a>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT LOGIC FOR WHATSAPP QUOTE SIMULATION -->
+
+    <script>
+
+        function sendWhatsAppQuote(e) {
+
+            e.preventDefault();
+
+
+
+            const cargo = document.getElementById('cargoType').value;
+
+            const port = document.getElementById('departurePort').value;
+
+            const dest = document.getElementById('destinationCity').value;
+
+            const extra = document.getElementById('extraDetails').value || 'لا يوجد';
+
+
+
+            const message = `مرحباً Egypt Trade One 👋\nأرغب في الاستفسار عن سعر نولون لشحنة:\n\n📦 *نوع الشحنة:* ${cargo}\n🚢 *ميناء التحميل:* ${port}\n📍 *جهة التسليم:* ${dest}\n📝 *ملاحظات إضافية:* ${extra}\n\nيرجى موافاتي بأفضل سعر وموعد التواجد.`;
+
+
+
+            const encodedMessage = encodeURIComponent(message);
+
+            const whatsappURL = `https://wa.me/201036606471?text=${encodedMessage}`;
+
+
+
+            // Open WhatsApp with pre-filled detailed message
+
+            window.open(whatsappURL, '_blank');
+
+        }
+
+    </script>
+
+</body>
+
+</html>
