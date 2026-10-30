@@ -124,6 +124,68 @@
         .bg-slate-800, .bg-slate-900, div[class*="bg-"] {
             backdrop-filter: blur(8px);
         }
+
+        /* FAQ Accordion Styles */
+        .eto-faq-item {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            background: rgba(15, 29, 52, 0.75);
+            backdrop-filter: blur(12px);
+        }
+
+        .eto-faq-question {
+            width: 100%;
+            padding: 14px 16px;
+            background: none;
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: right;
+            transition: background 0.2s ease;
+        }
+
+        .eto-faq-question:hover {
+            background-color: rgba(30, 64, 175, 0.2);
+        }
+
+        .eto-faq-icon {
+            font-size: 1.1rem;
+            color: #FACC15;
+            transition: transform 0.3s ease;
+        }
+
+        .eto-faq-item.active .eto-faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .eto-faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+            background-color: rgba(7, 15, 30, 0.5);
+        }
+
+        .eto-faq-item.active .eto-faq-answer {
+            max-height: 250px;
+            transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+        }
+
+        .eto-faq-answer p {
+            padding: 14px 16px;
+            margin: 0;
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
 
@@ -210,12 +272,10 @@
             <!-- Cargo Type -->
             <div>
                 <label class="block text-xs text-blue-100 font-bold mb-1.5 drop-shadow-sm">نوع الشحنة / الحاوية:</label>
-
                 <select id="cargoType" class="w-full text-sm rounded-xl p-3 border border-blue-400/50 focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold">
                     <option value="1x20">1x20</option>
                     <option value="1x40">1x40</option>
                     <option value="ثلاجة 40">ثلاجة 40</option>
-
                     <option value="2x20">2x20</option>
                     <option value="بضائع عامة / أخشاب / صب">بضائع عامة / أخشاب / صب</option>
                 </select>
@@ -224,7 +284,6 @@
             <!-- Departure Port -->
             <div>
                 <label class="block text-xs text-blue-100 font-bold mb-1.5 drop-shadow-sm">ميناء التحميل:</label>
-
                 <select id="departurePort" class="w-full text-sm rounded-xl p-3 border border-blue-400/50 focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold">
                     <option value="ميناء دمياط البحري">ميناء دمياط البحري</option>
                     <option value="ميناء بورسعيد">ميناء بورسعيد</option>
@@ -236,16 +295,13 @@
             <!-- Destination City -->
             <div>
                 <label class="block text-xs text-blue-100 font-bold mb-1.5 drop-shadow-sm">جهة التسليم (المحافظة / المدينة):</label>
-
                 <select id="destinationCity" class="w-full text-sm rounded-xl p-3 border border-blue-400/50 focus:outline-none focus:ring-2 focus:ring-blue-400 font-semibold">
                     <option value="القاهرة الكبرى">القاهرة الكبرى</option>
                     <option value="مدينة 6 أكتوبر">مدينة 6 أكتوبر</option>
                     <option value="العاشر من رمضان">العاشر من رمضان</option>
                     <option value="برج العرب - الإسكندرية">برج العرب - الإسكندرية</option>
                     <option value="مدينة السادات">مدينة السادات</option>
-
                     <option value="العلمين الجديدة">العلمين الجديدة</option>
-
                     <option value="محافظات الصعيد">محافظات الصعيد</option>
                     <option value="مدينة أخرى (سيتم تحديدها)">مدينة أخرى...</option>
                 </select>
@@ -254,7 +310,6 @@
             <!-- Notes or Custom location -->
             <div>
                 <label class="block text-xs text-blue-100 font-bold mb-1.5 drop-shadow-sm">تفاصيل إضافية (اختياري):</label>
-
                 <input type="text" id="extraDetails" placeholder="مثال: موعد الإفراج المتوقع أو اسم المصنع" class="w-full text-sm rounded-xl p-3 border border-blue-400/50 focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400">
             </div>
 
@@ -368,6 +423,82 @@
         </div>
     </section>
 
+    <!-- PROFESSIONAL FAQ & POLICIES SECTION (ACCORDION) -->
+    <section class="mb-5">
+        <h3 class="text-lg font-extrabold text-white mb-3 px-1 flex items-center gap-2">
+            <i class="fa-solid fa-circle-question text-gold-400"></i>
+            الأسئلة الشائعة وسياسة النقل
+        </h3>
+
+        <div class="eto-accordion">
+            <!-- Item 1 -->
+            <div class="eto-faq-item">
+                <button class="eto-faq-question">
+                    <span>متى يتم توجيه التريلا للتحميل من الميناء؟</span>
+                    <span class="eto-faq-icon">+</span>
+                </button>
+                <div class="eto-faq-answer">
+                    <p>بمجرد جاهزية إذن التسليم وشهادة الإفراج الجمركي مع المستخلص الخاص بكم، تحرك سياراتنا فوراً لبوابة الميناء لمنع أي تأخير أو رسوم أرضيات إضافية.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="eto-faq-item">
+                <button class="eto-faq-question">
+                    <span>هل النولون يشمل سحب ومرتجع الحاويات الفاضية؟</span>
+                    <span class="eto-faq-icon">+</span>
+                </button>
+                <div class="eto-faq-answer">
+                    <p>نعم، نقوم بالتنسيق الكامل لإعادة الحاوية الفاضية لساحة الملاحة المعتمدة بعد تفريغ البضاعة بالمصنع لضمان عدم احتساب غرامات تاخير حاويات (Demurrage).</p>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="eto-faq-item">
+                <button class="eto-faq-question">
+                    <span>ما هي سياسة وقت السماح المتاح للتفريق في المصنع؟</span>
+                    <span class="eto-faq-icon">+</span>
+                </button>
+                <div class="eto-faq-answer">
+                    <p>نوفر ساعات سماح مجانية مرنة للسائق داخل مخزن العميل لإتمام عملية التنزيل، ونوصي بتجهيز العمالة لتفادي أي تكلفة انتظار إضافية.</p>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="eto-faq-item">
+                <button class="eto-faq-question">
+                    <span>كيف يتم التعامل مع الحاويات ذات الأوزان الثقيلة؟</span>
+                    <span class="eto-faq-icon">+</span>
+                </button>
+                <div class="eto-faq-answer">
+                    <p>نحدد حساب النولون بدقة بناءً على نوع البضاعة والوزن الإجمالي لتوزيع الأحمال بما يطابق كباري الوزن والقوانين المرورية لضمان وصول شحنتك بأمان تام.</p>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="eto-faq-item">
+                <button class="eto-faq-question">
+                    <span>ما هي آلية ونظام الدفع المعتمد للعملاء الجدد؟</span>
+                    <span class="eto-faq-icon">+</span>
+                </button>
+                <div class="eto-faq-answer">
+                    <p>يتم سداد 50% مقدم عبر (Vodafone Cash / InstaPay) فور توجيه السيارة للبوابة، والسداد المتبقي (50%) فور وصول الحاوية للمصنع وتسليم بوليصة الشحن.</p>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="eto-faq-item">
+                <button class="eto-faq-question">
+                    <span>كيف يتم توثيق واستلام البضاعة بشكل رسمي؟</span>
+                    <span class="eto-faq-icon">+</span>
+                </button>
+                <div class="eto-faq-answer">
+                    <p>يلتزم السائق بتسليم إذن التسليم وبوليصة الشحن للمسؤول بالمصنع للتوقيع والختم بسلامة الشحنة، لضمان صحة الدورة المستندية للطرفين.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- COMPANY CONTACT DIRECTORY -->
     <section class="glass-card rounded-2xl p-4 mb-4 space-y-3">
         <h3 class="text-sm font-extrabold text-white pb-2 border-b border-gray-800 flex items-center gap-2">
@@ -419,7 +550,7 @@
         </a>
     </div>
 
-    <!-- JAVASCRIPT LOGIC FOR WHATSAPP QUOTE SIMULATION -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
         function sendWhatsAppQuote(e) {
             e.preventDefault();
@@ -436,5 +567,27 @@
 
             window.open(whatsappURL, '_blank');
         }
+
+        // Accordion Interactive Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.eto-faq-item');
+
+            faqItems.forEach(item => {
+                const questionBtn = item.querySelector('.eto-faq-question');
+
+                questionBtn.addEventListener('click', () => {
+                    // إغلاق أي عنصر آخر مفتوح
+                    faqItems.formatOther = faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // فتح أو إغلاق العنصر الحالي
+                    item.classList.toggle('active');
+                });
+            });
+        });
     </script>
 </body>
+</html>
