@@ -815,20 +815,20 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-image: linear-gradient(rgba(15, 23, 42, 0.70), rgba(15, 23, 42, 0.80)), url('port-bg.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        z-index: -1;
-        animation: portAnimation 25s infinite alternate ease-in-out;
-    }
+background-image: linear-gradient(rgba(15, 23, 42, 0.70), rgba(15, 23, 42, 0.80)), url('port-bg.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    animation: portAnimation 25s infinite alternate ease-in-out;
+}
 
-    @keyframes portAnimation {
-        0% { transform: scale(1); }
-        100% { transform: scale(1.08); }
-    }
+@keyframes portAnimation {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+}
 
-    .bg-slate-800, .bg-slate-900, div[class*="bg-"] {
-        backdrop-filter: blur(8px);
-    }
+.bg-slate-800, .bg-slate-900, div[class*="bg-"] {
+    backdrop-filter: blur(8px);
+}
 </style>
